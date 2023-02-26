@@ -24,7 +24,7 @@ but some general steps that are typically followed include:
 
 Gathering the data from various sources, which may include internal databases, external datasets, or manual data entry.
 
-```
+```python
 # important librararies
 import pandas as pd
 import numpy as np
@@ -46,7 +46,7 @@ Identifying and correcting errors, missing data, and inconsistencies in the data
 This may involve removing or imputing missing data, correcting data entry errors, or dealing with outliers.
 
 let's start by dropping unnecesary Timestamp column which we are not going to use at this point
-```
+```python
 # dropping the Timestamp column
 IT_survey_2020.drop('Timestamp',axis=1,inplace=True)
 ```
@@ -54,7 +54,7 @@ IT_survey_2020.drop('Timestamp',axis=1,inplace=True)
 
 The data has some missing values in it's columns.Let's check the columns with missing values
 
-```
+```python
 # checking the missing values
 missing_values=IT_survey_2020.isnull().sum().sort_values(ascending=False)
 percent=(IT_survey_2020.isnull().sum()/IT_survey_2020.count()).sort_values(ascending=False)
@@ -65,7 +65,7 @@ There is no specific percentage of data that one should remove during data clean
 
 or modified during data cleaning depends on the nature and quality of the data ,as well as specific rfequirement of analysis or application.
 
-```
+```python
 # dropping columns with null values
 cols=['Have you been forced to have a shorter working week (Kurzarbeit)? If yes, how many hours per week',
       'Have you received additional monetary support from your employer due to Work From Home? If yes, how much in 2020 in EUR',
