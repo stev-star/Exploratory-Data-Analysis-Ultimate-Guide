@@ -24,11 +24,18 @@ but some general steps that are typically followed include:
 
 Gathering the data from various sources, which may include internal databases, external datasets, or manual data entry.
 
+```
+# important librararies
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+import seaborn as sns
+```
+
 #### Dataset Used
 
-We will use the employee data for this. It contains 23 columns namely – First Name, Gender, Start Date, 
-
-Last Login, Salary, Bonus%, Senior Management, and Team.
+We will use the IT Salary Survey EU  2020 data for this. It contains 23 columns namely – 'Timestamp', 'Age', 'Gender', 'City', 'Position ','Total years of experience', 'Years of experience in Germany','Seniority level', 'Your main technology / programming language','Other technologies/programming languages you use often',
+'Yearly brutto salary (without bonus and stocks) in EUR','Yearly bonus + stocks in EUR','Annual brutto salary (without bonus and stocks) one year ago. Only answer if staying in the same country','Annual bonus+stocks one year ago. Only answer if staying in same country','Number of vacation days', 'Employment status', 'Сontract duration','Main language at work', 'Company size', 'Company type','Have you lost your job due to the coronavirus outbreak?','Have you been forced to have a shorter working week (Kurzarbeit)? If yes, how many hours per week','Have you received additional monetary support from your employer due to Work From Home? If yes, how much in 2020 in EUR']
 
 
 
@@ -37,6 +44,41 @@ Last Login, Salary, Bonus%, Senior Management, and Team.
 Identifying and correcting errors, missing data, and inconsistencies in the data set. 
 
 This may involve removing or imputing missing data, correcting data entry errors, or dealing with outliers.
+
+let's start by dropping unnecesary Timestamp column which we are not going to use at this point
+```
+# dropping the Timestamp column
+IT_survey_2020.drop('Timestamp',axis=1,inplace=True)
+```
+##### - Missing Values
+
+The data has some missing values in it's columns.Let's check the columns with missing values
+
+```
+# checking the missing values
+missing_values=IT_survey_2020.isnull().sum().sort_values(ascending=False)
+percent=(IT_survey_2020.isnull().sum()/IT_survey_2020.count()).sort_values(ascending=False)
+missing_data_df=pd.DataFrame({'missing_values':missing_values,'% of the Total':percent})
+missing_data_df
+```
+There is no specific percentage of data that one should remove during data cleaning .The amount of data that need to be removed 
+
+or modified during data cleaning depends on the nature and quality of the data ,as well as specific rfequirement of analysis or application.
+
+```
+# dropping columns with null values
+cols=['Have you been forced to have a shorter working week (Kurzarbeit)? If yes, how many hours per week',
+      'Have you received additional monetary support from your employer due to Work From Home? If yes, how much in 2020 in EUR',
+      'Yearly bonus + stocks in EUR',                                                                                             
+      'Annual brutto salary (without bonus and stocks) one year ago. Only answer if staying in the same country',           
+      'Annual bonus+stocks one year ago. Only answer if staying in same country' ]
+
+IT_survey_2020.drop(cols,axis=1,inplace=True)
+
+# dropping the rows with null values
+IT_survey_2020.dropna(axis=0,inplace=True)
+```
+
 
 ### Data visualization:
 
