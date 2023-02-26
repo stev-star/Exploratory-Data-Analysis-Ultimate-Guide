@@ -1,4 +1,4 @@
-![Uploading head.png…]()
+
 # Exploratory-Data-Analysis-Ultimate-Guide## What is Exploratory Data Analysis?
 
 
@@ -29,7 +29,7 @@ Gathering the data from various sources, which may include internal databases, e
 We will use the employee data for this. It contains 23 columns namely – First Name, Gender, Start Date, 
 
 Last Login, Salary, Bonus%, Senior Management, and Team.
-
+![Uploading head.png…]()
 
 
 #### Data cleaning: 
