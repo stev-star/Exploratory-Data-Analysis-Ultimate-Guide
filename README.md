@@ -34,9 +34,7 @@ import seaborn as sns
 
 #### Dataset Used
 
-We will use the IT Salary Survey EU  2020 data for this. It contains 23 columns namely – 'Timestamp', 'Age', 'Gender', 'City', 'Position ','Total years of experience', 'Years of experience in Germany','Seniority level', 'Your main technology / programming language','Other technologies/programming languages you use often',
-'Yearly brutto salary (without bonus and stocks) in EUR','Yearly bonus + stocks in EUR','Annual brutto salary (without bonus and stocks) one year ago. Only answer if staying in the same country','Annual bonus+stocks one year ago. Only answer if staying in same country','Number of vacation days', 'Employment status', 'Сontract duration','Main language at work', 'Company size', 'Company type','Have you lost your job due to the coronavirus outbreak?','Have you been forced to have a shorter working week (Kurzarbeit)? If yes, how many hours per week','Have you received additional monetary support from your employer due to Work From Home? If yes, how much in 2020 in EUR']
-
+We will use the [IT Salary Survey EU  2020](https://www.kaggle.com/datasets/parulpandey/2020-it-salary-survey-for-eu-region) data for this. It contains 23 columns namely
 
 
 #### Data cleaning: 
