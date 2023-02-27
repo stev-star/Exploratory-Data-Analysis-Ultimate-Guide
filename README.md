@@ -75,6 +75,8 @@ IT_survey_2020.drop(cols,axis=1,inplace=True)
 
 # dropping the rows with null values
 IT_survey_2020.dropna(axis=0,inplace=True)
+
+IT_survey_2020.isnull().sum()
 ```
 
 `- Handling the Outliers`
