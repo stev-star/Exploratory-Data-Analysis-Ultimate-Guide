@@ -119,6 +119,7 @@ top5_main_tech=new_df['Your main technology / programming language'].value_count
 top5_main_tech.plot.barh()
 plt.show()
 ```
+![](Exploratory-Data-Analysis-Ultimate-Guide/top_5_programming.png)
 Consider the different programming Languages you have on the data.Plotting the top 5 most used programming 
 
 language by the people who participated in the survey 
