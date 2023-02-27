@@ -117,7 +117,7 @@ This can include scatter plots, histograms, box plots, heat maps, and other type
 ```python
 sns.displot(new_df['Yearly brutto salary (without bonus and stocks) in EUR'],kde=True,bins=20)
 ```
-![displot](https://github.com/stev-star/Exploratory-Data-Analysis-Ultimate-Guide/blob/main/displot.png)
+![displot](https://github.com/stev-star/Exploratory-Data-Analysis-Ultimate-Guide/blob/main/displot%20.png)
 
 Majority of the people who participated in the survey earn a salary between 400000 - 1000000 EUR
 
@@ -140,7 +140,7 @@ sns.relplot(x='Age',y='Yearly brutto salary (without bonus and stocks) in EUR',
             data=new_df,hue='Gender')
 plt.show()
 ```
-![screenshot](https://github.com/stev-star/Exploratory-Data-Analysis-Ultimate-Guide/blob/main/Screenshot 2023-02-27 110517.png)
+![screenshot](https://github.com/stev-star/Exploratory-Data-Analysis-Ultimate-Guide/blob/main/Screenshot%202023-02-27%20110517.png)
 
 - Multivariate Analysis
 
