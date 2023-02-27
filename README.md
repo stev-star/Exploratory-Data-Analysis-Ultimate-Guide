@@ -111,6 +111,7 @@ This can include scatter plots, histograms, box plots, heat maps, and other type
 ```python
 sns.displot(new_df['Yearly brutto salary (without bonus and stocks) in EUR'],kde=True,bins=20)
 ```
+Majority of the people who participated in the survey earn a salary between 400000 - 1000000 EUR
 
 ```python
 # top 5 programming language
@@ -118,6 +119,9 @@ top5_main_tech=new_df['Your main technology / programming language'].value_count
 top5_main_tech.plot.barh()
 plt.show()
 ```
+Consider the different programming Languages you have on the data.Plotting the top 5 most used programming 
+
+language by the people who participated in the survey 
 
 - Bivariate Analysis
 
