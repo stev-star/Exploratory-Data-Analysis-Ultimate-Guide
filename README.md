@@ -125,7 +125,7 @@ language by the people who participated in the survey
 
 - Bivariate Analysis
 
-```
+```python
 sns.relplot(x='Age',y='Yearly brutto salary (without bonus and stocks) in EUR',
             data=new_df,hue='Gender')
 plt.show()
