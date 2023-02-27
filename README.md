@@ -35,6 +35,7 @@ import seaborn as sns
 #### Dataset Used
 
 We will use the [IT Salary Survey EU  2020](https://www.kaggle.com/datasets/parulpandey/2020-it-salary-survey-for-eu-region) data for this. It contains 23 columns namely
+![head](https://github.com/stev-star/Exploratory-Data-Analysis-Ultimate-Guide/blob/main/head.png)
 
 
 #### Data cleaning: 
@@ -59,6 +60,8 @@ percent=(IT_survey_2020.isnull().sum()/IT_survey_2020.count()).sort_values(ascen
 missing_data_df=pd.DataFrame({'missing_values':missing_values,'% of the Total':percent})
 missing_data_df
 ```
+![missing_values](https://github.com/stev-star/Exploratory-Data-Analysis-Ultimate-Guide/blob/main/missing_values.png)
+
 There is no specific percentage of data that one should remove during data cleaning .The amount of data that need to be removed 
 
 or modified during data cleaning depends on the nature and quality of the data ,as well as specific rfequirement of analysis or application.
@@ -78,6 +81,7 @@ IT_survey_2020.dropna(axis=0,inplace=True)
 
 IT_survey_2020.isnull().sum()
 ```
+![without_missing](https://github.com/stev-star/Exploratory-Data-Analysis-Ultimate-Guide/blob/main/without_missing_values.png)
 
 `- Handling the Outliers`
 
@@ -86,6 +90,8 @@ It's important to visualize the data to identify outliers. Plotting the data in 
 ```python
 sns.scatterplot(x=IT_survey_2020['Age'],y=IT_survey_2020['Yearly brutto salary (without bonus and stocks) in EUR'])
 ```
+![outliers](https://github.com/stev-star/Exploratory-Data-Analysis-Ultimate-Guide/blob/main/outliers.png)
+
 
 One approach of handling outliers is to remove them from the dataset.However,it's important to be careful when removing outliers as this can bias the an analysis.
 
@@ -111,6 +117,8 @@ This can include scatter plots, histograms, box plots, heat maps, and other type
 ```python
 sns.displot(new_df['Yearly brutto salary (without bonus and stocks) in EUR'],kde=True,bins=20)
 ```
+![displot](https://github.com/stev-star/Exploratory-Data-Analysis-Ultimate-Guide/blob/main/displot.png)
+
 Majority of the people who participated in the survey earn a salary between 400000 - 1000000 EUR
 
 ```python
@@ -120,6 +128,7 @@ top5_main_tech.plot.barh()
 plt.show()
 ```
 ![top-5](https://github.com/stev-star/Exploratory-Data-Analysis-Ultimate-Guide/blob/main/top_5_programming.png)
+
 Consider the different programming Languages you have on the data.Plotting the top 5 most used programming 
 
 language by the people who participated in the survey 
@@ -131,6 +140,7 @@ sns.relplot(x='Age',y='Yearly brutto salary (without bonus and stocks) in EUR',
             data=new_df,hue='Gender')
 plt.show()
 ```
+![screenshot](https://github.com/stev-star/Exploratory-Data-Analysis-Ultimate-Guide/blob/main/Screenshot 2023-02-27 110517.png)
 
 - Multivariate Analysis
 
