@@ -79,9 +79,54 @@ IT_survey_2020.drop(cols,axis=1,inplace=True)
 IT_survey_2020.dropna(axis=0,inplace=True)
 ```
 
+`- Handling the Outliers`
+
+It's important to visualize the data to identify outliers. Plotting the data in a scatter plot or histogram can help you identify data points that are significantly far from others
+
+```python
+sns.scatterplot(x=IT_survey_2020['Age'],y=IT_survey_2020['Yearly brutto salary (without bonus and stocks) in EUR'])
+```
+
+One approach of handling outliers is to remove them from the dataset.However,it's important to be careful when removing outliers as this can bias the an analysis.
+
+Removing outliers can be appropriate due to data erros or when the outliers are not representing the underlying population.
+
+```python
+# removal of outliers using standard deviation
+lower_limit=IT_survey_2020['Yearly brutto salary (without bonus and stocks) in EUR'].mean()-3*IT_survey_2020['Yearly brutto salary (without bonus and stocks) in EUR'].std()
+upper_limit=IT_survey_2020['Yearly brutto salary (without bonus and stocks) in EUR'].mean()+3*IT_survey_2020['Yearly brutto salary (without bonus and stocks) in EUR'].std()
+lower_limit,upper_limit
+
+# create a new df 
+new_df=IT_survey_2020[(IT_survey_2020['Yearly brutto salary (without bonus and stocks) in EUR']>lower_limit) & (IT_survey_2020['Yearly brutto salary (without bonus and stocks) in EUR']<upper_limit)]
+```
 
 ### Data visualization:
 
 Creating visualizations of the data to explore patterns, relationships, and trends. 
 
 This can include scatter plots, histograms, box plots, heat maps, and other types of visualizations.
+
+- Univariate Analysis
+```python
+sns.displot(new_df['Yearly brutto salary (without bonus and stocks) in EUR'],kde=True,bins=20)
+```
+
+```python
+# top 5 programming language
+top5_main_tech=new_df['Your main technology / programming language'].value_counts(normalize=True).head()
+top5_main_tech.plot.barh()
+plt.show()
+```
+
+- Bivariate Analysis
+
+```
+sns.relplot(x='Age',y='Yearly brutto salary (without bonus and stocks) in EUR',
+            data=new_df,hue='Gender')
+plt.show()
+```
+
+- Multivariate Analysis
+
+
